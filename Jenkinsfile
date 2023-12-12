@@ -5,6 +5,7 @@ pipeline {
     stages {
         stage('Lint Checks'){
             steps {
+                sh "whoami"
                 sh "echo ***** Starting Style Checks *****"
                 sh "ls -ltr server.js"
                 sh "~/node_modules/jslint/bin/jslist.js server.js"
