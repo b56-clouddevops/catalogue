@@ -7,8 +7,8 @@ pipeline {
             steps {
                 sh "whoami"
                 sh "echo ***** Starting Style Checks *****"
-                sh "ls -ltr server.js"
-                sh "~/node_modules/jslint/bin/jslist.js server.js"
+                sh "npm i jslint"
+                sh "node_modules/jslint/bin/jslist.js server.js"
                 sh "echo ***** Style Checks Are Completed *****"
             }
         }
