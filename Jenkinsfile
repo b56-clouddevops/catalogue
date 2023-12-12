@@ -1,3 +1,4 @@
 @Library('jenkins-shared-library') _ 
 
-nodejs('catalogue')
+env.COMPONENT="catalogue"
+nodejs()
