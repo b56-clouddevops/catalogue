@@ -6,7 +6,8 @@ pipeline {
         stage('Lint Checks'){
             steps {
                 sh "echo ***** Starting Style Checks *****"
-                sh "/home/centos/node_modules/jslint/bin/jslist.js server.js"
+                sh "ls -ltr server.js"
+                sh "~/node_modules/jslint/bin/jslist.js server.js"
                 sh "echo ***** Style Checks Are Completed *****"
             }
         }
@@ -17,3 +18,4 @@ pipeline {
         }
     }
 }
+
