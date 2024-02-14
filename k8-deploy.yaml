@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: catalogue
+  labels:
+    app: catalogue
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: catalogue
+  template:
+    metadata:
+      labels:
+        app: catalogue
+    spec:
+      containers:
+      - name: catalogue
+        image: nginx:latest
+        ports:
+        - containerPort: 8080 
+
+--- 
+# Creating ClusterIP Service ( this is the default type ) 
+apiVersion: v1
+kind: Service
+metadata:
+  name: catalogue-svc
+spec:
+  selector:
+    app: catalogue
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
