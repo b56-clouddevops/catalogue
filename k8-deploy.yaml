@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: catalogue
-        image: nginx:latest
+        image: 355449129696.dkr.ecr.us-east-1.amazonaws.com/catalogue:v001
         ports:
         - containerPort: 8080 
 
