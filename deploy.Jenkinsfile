@@ -4,7 +4,7 @@ pipeline {
         string(name: 'APP_VERSION', defaultValue: 'v002', description: 'Applicaiton Version To Be Deployed') 
     }
     stages{
-        stage('Deploying Frontend') {
+        stage('Deploying Catalogue') {
             steps {
                 sh "echo Authentication To EKS"
                 sh "aws eks update-kubeconfig  --name dev-eks-cluster"
